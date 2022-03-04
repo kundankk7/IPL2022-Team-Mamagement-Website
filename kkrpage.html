@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| KKR
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Merienda+One&family=Rubik&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="https://www.iplt20.com/img/favicon.ico">
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        /* text-decoration: none; */
+        /* font-family: serif; */
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    #logo img {
+        float: left;
+        height: 61px;
+        margin: 3px 46px;
+        width: 60px;
+    }
+
+    #logo img:hover {
+        cursor: pointer;
+    }
+
+    .navbar {
+        background-color: #040a64;
+        border-radius: 0px 0px 7px 7px;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+
+
+    }
+
+    .navbar ul {
+        overflow: auto;
+    }
+
+    .navbar li {
+        float: left;
+        list-style: none;
+        padding: 9px;
+        margin: 12px 27px;
+    }
+
+    .navbar li a {
+        text-decoration: none;
+        color: rgb(219, 231, 166);
+        font-size: 21px;
+        /* padding: 3px 3px; */
+
+
+    }
+
+    .navbar li a:hover {
+        color: rgb(61, 219, 219);
+    }
+
+    .search {
+        color: rgb(15, 230, 212);
+        float: right;
+        border-radius: 25px;
+        padding: 8px 66px;
+        margin: 4px;
+        border: blueviolet;
+    }
+
+
+
+
+
+
+    /* <-- .......................................SLIDER...................................... --> */
+
+
+
+
+
+    .slider-box {
+        width: 100%;
+        max-height: 95vh;
+        position: relative;
+        overflow: hidden;
+        margin: 0px auto;
+    }
+
+    #slider {
+        width: 100%;
+        display: inline-flex;
+        transition: 0.7s;
+    }
+
+    #slider img {
+        width: 100%;
+    }
+
+    .indicators {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+    }
+
+    .indicators span {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
+
+    .active {
+        background: #ffff !important;
+    }
+
+    /* ...............................team player heading CSS............................. */
+
+
+
+    .kkrteam-players {
+        text-align: center;
+        background-color: #0000fc;
+        /* box-shadow: inset 1px 12px 20px 0px; */
+        padding: 7px;
+        /* color: darkgray; */
+        font-family: 'Merienda One', cursive;
+
+
+
+
+        background-image: url(./rrplayers/rrbg.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: #10102F;
+        background-position: center top;
+        margin-top: -5px;
+        z-index: -1;
+    }
+
+    .kkrteam-players h4 {
+        font-size: 44px;
+    }
+
+
+
+
+
+
+    /* ...................................................................CARD CSS................................ */
+    .kkrteam-containt {
+        display: grid;
+        /* border: 2px solid red; */
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 49px;
+        column-gap: 63px;
+        /* background-color: rgb(207, 207, 147); */
+
+
+        background-image: url(./rrplayers/rrbg.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: #10102F;
+        background-position: center top;
+        margin-top: -5px;
+
+
+
+    }
+
+    .kkrp {
+        background-color: #524ab9;
+        margin: 23px 34px;
+        border: 2px solid rgb(57, 84, 236);
+        height: 333Spx;
+        width: 209px;
+        border-radius: 15px 15px 15px 15px;
+        box-shadow: 0px 0px 17px 0px;
+        text-align: center;
+        background-image: linear-gradient(179deg, #abc259, transparent);
+    }
+
+    #msd {
+        text-align: center;
+        height: 198px;
+        width: 208px;
+        margin: -4px -9px;
+    }
+
+
+    .playername {
+        /* border: 2px solid rgb(214, 231, 55); */
+        box-shadow: inset 1px 0px 7px 1px;
+        border-radius: 6px;
+        padding: 3px;
+        color: rgb(17, 0, 250);
+    }
+
+    .kkrdesc {
+        box-shadow: inset 1px 0px 7px 1px;
+        border-radius: 6px;
+        padding: 4px;
+    }
+
+    .kkrdesc p {
+        color: rgb(0, 17, 255);
+        margin: 2px;
+    }
+
+    h4 {
+        color: rgb(187, 206, 14);
+    }
+
+    .kkrdesc {
+        /* box-shadow: inset 1px 0px 7px 1px;
+        border-radius: 6px; */
+        padding: 3px;
+        margin: 4px 2px;
+        color: #2214e8;
+    }
+
+    .kkrbtn {
+        background-color: #dd0c0c;
+        border: none;
+        color: rgb(205, 202, 247);
+        padding: 7px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 11px;
+        border-radius: 16px;
+        margin: 4px 0px;
+    }
+
+    .kkrbtn:hover {
+        cursor: pointer;
+        color: rgb(5, 3, 88);
+
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navbar">
+
+            <ul>
+                <div id="logo">
+                    <img src="./teamlogo/kkrlogo.png" alt="Loading Network Errer">
+                </div>
+                <li><a href="./index.html">Home</a>
+                </li>
+                <li><a href="#kkrteam">Teams Players</a></li>
+                <li><a href="./add-member-form.html">Add Member</a></li>
+                <li><a href="./add-team-form.html">Add Team</a></li>
+                <div class="search">
+                    <input type="text" class="search" id="search" placeholder="search this website">
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <!-- .......................................SLIDER...................................... -->
+
+
+
+
+
+
+    <div class="slider-box">
+        <div id="slider">
+            <img src="./kkrplayers/kkrs1.jpg" alt="">
+            <img src="./kkrplayers/kkrs2.jpg" alt="">
+            <img src="./kkrplayers/kkrs3.jpg" alt="">
+
+        </div>
+        <div class="indicators">
+            <span id="btn1" class="active"></span>
+            <span id="btn2"></span>
+            <span id="btn3"></span>
+
+        </div>
+    </div>
+
+
+
+    <div id="kkrteam" class="kkrteam-players">
+        <h4>KKR TEAM PLAYERS</h4>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- ....................................CARD HTML............................ -->
+
+
+
+
+    <div class="kkrteam-containt">
+
+        <div class="kkrp" id="dc1">
+            <div class="playerimg">
+                <img id="msd" src="./kkrplayers/iyer.png" alt="">
+            </div>
+            <div class="playername">
+                <h4>Shreyas Iyer(Capt.)</h4>
+            </div>
+            <div class="desc">
+                <div class="kkrdesc">
+                    <P>Team:-KKR</P>
+                </div>
+                <div class="kkrdesc">
+                    <p>Price:-10cr</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>playing-status:-playing</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>Role:-Batsman</p>
+                </div>
+            </div>
+            <a href="./kkrplayercard/kkrplayeriyer.html" class="kkrbtn">
+                Read more...
+            </a>
+        </div>
+
+        <div class="kkrp" id="dc1">
+            <div class="playerimg">
+                <img id="msd" src="./kkrplayers/iyer.png" alt="">
+            </div>
+            <div class="playername">
+                <h4>Shreyas Iyer(Capt.)</h4>
+            </div>
+            <div class="desc">
+                <div class="kkrdesc">
+                    <P>Team:-KKR</P>
+                </div>
+                <div class="kkrdesc">
+                    <p>Price:-10cr</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>playing-status:-playing</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>Role:-Batsman</p>
+                </div>
+            </div>
+            <button class="kkrbtn">
+                Read more....
+            </button>
+        </div>
+
+
+
+
+
+        <div class="kkrp" id="dc1">
+            <div class="playerimg">
+                <img id="msd" src="./kkrplayers/iyer.png" alt="">
+            </div>
+            <div class="playername">
+                <h4>Shreyas Iyer(Capt.)</h4>
+            </div>
+            <div class="desc">
+                <div class="kkrdesc">
+                    <P>Team:-KKR</P>
+                </div>
+                <div class="kkrdesc">
+                    <p>Price:-10cr</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>playing-status:-playing</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>Role:-Batsman</p>
+                </div>
+            </div>
+            <button class="kkrbtn">
+                Read more....
+            </button>
+        </div>
+
+
+
+
+        <div class="kkrp" id="dc1">
+            <div class="playerimg">
+                <img id="msd" src="./kkrplayers/iyer.png" alt="">
+            </div>
+            <div class="playername">
+                <h4>Shreyas Iyer(Capt.)</h4>
+            </div>
+            <div class="desc">
+                <div class="kkrdesc">
+                    <P>Team:-KKR</P>
+                </div>
+                <div class="kkrdesc">
+                    <p>Price:-10cr</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>playing-status:-playing</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>Role:-Batsman</p>
+                </div>
+            </div>
+            <button class="kkrbtn">
+                Read more....
+            </button>
+        </div>
+
+
+
+        <div class="kkrp" id="dc1">
+            <div class="playerimg">
+                <img id="msd" src="./kkrplayers/iyer.png" alt="">
+            </div>
+            <div class="playername">
+                <h4>Shreyas Iyer(Capt.)</h4>
+            </div>
+            <div class="desc">
+                <div class="kkrdesc">
+                    <P>Team:-KKR</P>
+                </div>
+                <div class="kkrdesc">
+                    <p>Price:-10cr</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>playing-status:-playing</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>Role:-Batsman</p>
+                </div>
+            </div>
+            <button class="kkrbtn">
+                Read more....
+            </button>
+        </div>
+
+
+
+
+
+        <div class="kkrp" id="dc1">
+            <div class="playerimg">
+                <img id="msd" src="./kkrplayers/iyer.png" alt="">
+            </div>
+            <div class="playername">
+                <h4>Shreyas Iyer(Capt.)</h4>
+            </div>
+            <div class="desc">
+                <div class="kkrdesc">
+                    <P>Team:-KKR</P>
+                </div>
+                <div class="kkrdesc">
+                    <p>Price:-10cr</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>playing-status:-playing</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>Role:-Batsman</p>
+                </div>
+            </div>
+            <button class="kkrbtn">
+                Read more....
+            </button>
+        </div>
+
+
+
+        <div class="kkrp" id="dc1">
+            <div class="playerimg">
+                <img id="msd" src="./kkrplayers/iyer.png" alt="">
+            </div>
+            <div class="playername">
+                <h4>Shreyas Iyer(Capt.)</h4>
+            </div>
+            <div class="desc">
+                <div class="kkrdesc">
+                    <P>Team:-KKR</P>
+                </div>
+                <div class="kkrdesc">
+                    <p>Price:-10cr</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>playing-status:-playing</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>Role:-Batsman</p>
+                </div>
+            </div>
+            <button class="kkrbtn">
+                Read more....
+            </button>
+        </div>
+
+
+
+
+        <div class="kkrp" id="dc1">
+            <div class="playerimg">
+                <img id="msd" src="./kkrplayers/iyer.png" alt="">
+            </div>
+            <div class="playername">
+                <h4>Shreyas Iyer(Capt.)</h4>
+            </div>
+            <div class="desc">
+                <div class="kkrdesc">
+                    <P>Team:-KKR</P>
+                </div>
+                <div class="kkrdesc">
+                    <p>Price:-10cr</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>playing-status:-playing</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>Role:-Batsman</p>
+                </div>
+            </div>
+            <button class="kkrbtn">
+                Read more....
+            </button>
+        </div>
+
+
+
+
+        <div class="kkrp" id="dc1">
+            <div class="playerimg">
+                <img id="msd" src="./kkrplayers/iyer.png" alt="">
+            </div>
+            <div class="playername">
+                <h4>Shreyas Iyer(Capt.)</h4>
+            </div>
+            <div class="desc">
+                <div class="kkrdesc">
+                    <P>Team:-KKR</P>
+                </div>
+                <div class="kkrdesc">
+                    <p>Price:-10cr</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>playing-status:-playing</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>Role:-Batsman</p>
+                </div>
+            </div>
+            <button class="kkrbtn">
+                Read more....
+            </button>
+        </div>
+
+
+
+
+
+        <div class="kkrp" id="dc1">
+            <div class="playerimg">
+                <img id="msd" src="./kkrplayers/iyer.png" alt="">
+            </div>
+            <div class="playername">
+                <h4>Shreyas Iyer(Capt.)</h4>
+            </div>
+            <div class="desc">
+                <div class="kkrdesc">
+                    <P>Team:-KKR</P>
+                </div>
+                <div class="kkrdesc">
+                    <p>Price:-10cr</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>playing-status:-playing</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>Role:-Batsman</p>
+                </div>
+            </div>
+            <button class="kkrbtn">
+                Read more....
+            </button>
+        </div>
+
+
+
+
+        <div class="kkrp" id="dc1">
+            <div class="playerimg">
+                <img id="msd" src="./kkrplayers/iyer.png" alt="">
+            </div>
+            <div class="playername">
+                <h4>Shreyas Iyer(Capt.)</h4>
+            </div>
+            <div class="desc">
+                <div class="kkrdesc">
+                    <P>Team:-KKR</P>
+                </div>
+                <div class="kkrdesc">
+                    <p>Price:-10cr</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>playing-status:-playing</p>
+                </div>
+                <div class="kkrdesc">
+                    <p>Role:-Batsman</p>
+                </div>
+            </div>
+            <button class="kkrbtn">
+                Read more....
+            </button>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+    <!-- ....................................jsSLIDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, -->
+
+
+    <script>
+
+        var slide = document.getElementById("slider");
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+
+        btn1.onclick = function () {
+            slide.style.transform = "translateX(0px)";
+            btn1.classList.add('active');
+            btn2.classList.remove('active');
+            btn3.classList.remove('active');
+
+        };
+        btn2.onclick = function () {
+            slide.style.transform = "translateX(-100%)";
+            btn1.classList.remove('active');
+            btn2.classList.add('active');
+            btn3.classList.remove('active');
+
+        };
+        btn3.onclick = function () {
+            slide.style.transform = "translateX(-200%)";
+            btn1.classList.remove('active');
+            btn2.classList.remove('active');
+            btn3.classList.add('active');
+
+        };
+        btn4.onclick = function () {
+            slide.style.transform = "translateX(-300%)";
+            btn1.classList.remove('active');
+            btn2.classList.remove('active');
+            btn3.classList.remove('active');
+
+        };
+
+
+    </script>
+</body>
+
+</html>

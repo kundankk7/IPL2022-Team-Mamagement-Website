@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>|  IPL2022</title>
+    <link rel="stylesheet" href="footer.css">
+    <link rel="shortcut icon" href="https://www.iplt20.com/img/favicon.ico">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        #logo img {
+            float: left;
+            height: 60px;
+            margin: 1px 28px;
+            width: 160px;
+        }
+
+        #logo img:hover {
+            cursor: pointer;
+        }
+
+        .navbar {
+            background-color: #01096a;
+            border-radius: 0px 0px 7px 7px;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+
+
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            padding: 9px;
+            font-size: 22px;
+            margin: 6px 27px;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: rgb(205, 202, 247);
+            /* padding: 3px 3px; */
+
+
+        }
+
+        .navbar li a:hover {
+            color: rgb(61, 219, 219);
+        }
+
+        .search {
+            color: rgb(15, 230, 212);
+            float: right;
+            padding: 7px 56px;
+            margin: 4px;
+            border-radius: 21px;
+            border: blueviolet;
+        }
+
+
+
+
+
+
+        /* <-- .......................................SLIDER...................................... --> */
+
+
+
+
+
+        .slider-box {
+            width: 100%;
+            max-height: 98vh;
+            position: relative;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+
+        #slider {
+            width: 100%;
+            display: inline-flex;
+            transition: 0.7s;
+        }
+
+        #slider img {
+            width: 100%;
+        }
+
+        .indicators {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+        }
+
+        .indicators span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .active {
+            background: #ffff !important;
+        }
+
+
+
+
+
+        /* ...............................................CARD CSS............................................ */
+
+        #csk-bg-color {
+            /* border: 2px solid yellow; */
+            background-color: #ffd400;
+            background-image: linear-gradient(177deg, #b2f005, #0000001f);
+            box-shadow: 0px 0px 15px 8px cornflowerblue;
+        }
+
+        #mi-bg-color {
+            /* border: 2px solid #d6d6d6; */
+            background-color: #7272d4;
+            background-image: linear-gradient(177deg, #dbe2c6, #0000001f);
+            box-shadow: 0px 0px 20px 9px #58a3de;
+        }
+
+        #rcb-bg-color {
+            /* border: 2px solid yellow; */
+            background-color: #ff2f00;
+            background-image: linear-gradient(177deg, #eceeb5, #0000001f);
+            box-shadow: 0px 0px 15px 8px cornflowerblue;
+        }
+
+        #dc-bg-color {
+            /* border: 2px solid yellow; */
+            background-color: #ea515796;
+            background-image: linear-gradient(177deg, #87b4ee, #0000001f);
+            box-shadow: 0px 0px 15px 8px cornflowerblue;
+        }
+
+        #rr-bg-color {
+            /* border: 2px solid yellow; */
+            background-color: #c75be2;
+            background-image: linear-gradient(177deg, #a2b4e0de, #0000001f);
+            box-shadow: 0px 0px 15px 8px cornflowerblue;
+        }
+
+        #kkr-bg-color {
+            background-color: #3a0d7c;
+            background-image: linear-gradient(177deg, #e0ddd3, #0000001f);
+            box-shadow: 0px 0px 15px 8px cornflowerblue;
+        }
+
+        #srh-bg-color {
+            background-color: #fccb11;
+            background-image: linear-gradient(177deg, #d6e4ae, #0000001f);
+            box-shadow: 0px 0px 15px 8px cornflowerblue;
+        }
+
+        .team-containor {
+
+            /* position: relative;  */
+            /* border: 2px solid yellow;
+            background-color: yellow; */
+            /* box-shadow: 0px 0px 15px 8px cornflowerblue; */
+            font-family: serif;
+            border-radius: 16px
+        }
+
+
+
+
+        .team-manager {
+
+            position: absolute;
+            margin-top: 74px;
+            /* border: 2px solid #00ff95; */
+            box-shadow: 0px 0px 15px 8px cornflowerblue;
+            border-radius: 16px;
+            padding: 18px;
+        }
+
+        .team-manager img {
+            width: 100%;
+        }
+
+        .team-details {
+            vertical-align: middle;
+            margin-left: 244px;
+            padding-top: 45px;
+            height: 333px;
+            /* box-shadow: 0px 0px 15px 8px cornflowerblue; */
+        }
+
+        .team-details-table {
+            margin-bottom: 10px;
+        }
+
+
+
+        .team-details-table li:first-child {
+            font-size: 40px;
+            font-family: serif;
+            line-height: 52px;
+            text-align: center;
+            text-shadow: 5px 0px 11px #0000008f;
+            width: 90%;
+            margin: 7px 7px 14px 11px;
+            color: blue;
+        }
+
+        .team-details-table li {
+            display: inline-block;
+            /* vertical-align: bottom; */
+            /* font-size: 16px; */
+            line-height: 20px;
+            width: 21%;
+            margin: 2px 10px 5px 27px;
+        }
+
+        .teamcoach {
+            display: inline-block;
+            font-size: 16px;
+            line-height: 20px;
+            width: 21%;
+            background: blue;
+            text-align: center;
+            border-radius: 19px;
+            box-shadow: inset 0px 0px 11px 4px;
+            padding: 5px 3px;
+
+            padding-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .team-details-table li span {
+            color: rgb(244 223 33);
+            font-size: 19px;
+            display: block;
+        }
+
+        .stats-header,
+        .stats-data {
+            background: rgb(53 21 228 / 97%);
+            margin: 8px;
+            height: 38px;
+            padding-top: 8px;
+            text-align: center;
+            font-size: 13px;
+            border-radius: 19px;
+            box-shadow: inset 0px 0px 11px 4px;
+        }
+
+        .team-details .stats-header li,
+        .team-details .stats-data li {
+            width: 13%;
+            font-size: 18px;
+            color: cyan;
+            padding: 10px 7px;
+        }
+
+        .stats-header li {
+            line-height: 20px;
+        }
+
+        .stats li {
+            display: inline-block;
+            width: 20%;
+            text-align: center;
+            line-height: 10px;
+        }
+
+        .card-btn {
+            background-color: #0d067e;
+            border: none;
+            color: rgb(205, 202, 247);
+            padding: 7px 18px;
+            text-align: center;
+            text-decoration: none;
+            display: table;
+            margin: 0px 40%;
+            font-size: 16px;
+            border-radius: 16px;
+        }
+
+        .card-btn:hover {
+            cursor: pointer;
+            color: rgb(61, 219, 219);
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+
+            <ul>
+                <div id="logo">
+                    <img src="./teamlogo/IPL logo.png" alt="Loading Network Errer">
+                </div>
+                <li><a href="#">Home</a>
+                </li>
+                <li><a href="#csk-bg-color">Teams</a></li>
+                <li><a href="./add-member-form.html">Add Member</a></li>
+                <li><a href="./add-team-form.html">Add Team</a></li>
+                <div class="search">
+                    <input type="text" class="search" id="search" placeholder="search this website">
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <!-- .......................................SLIDER...................................... -->
+
+
+
+
+
+
+    <div class="slider-box">
+        <div id="slider">
+            <img src="slide3.jpg" alt="">
+            <img src="slide2.jpg" alt="">
+            <img src="slide1.jpg" alt="">
+
+        </div>
+        <div class="indicators">
+            <span id="btn1" class="active"></span>
+            <span id="btn2"></span>
+            <span id="btn3"></span>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- ...................................CARD HTML................................. -->
+
+
+    <div  class="all-team-containor">
+        <div id="csk-bg-color" class="team-containor">
+            <div  class="team-manager">
+                <img src="./teamlogo/csklogo.png" alt="">
+            </div>
+            <div class="team-details">
+                <ul class="team-details-table">
+                    <li> Chenni Super King </li>
+                    <li class="teamcoach">
+                        <span>CAPTION</span>
+                        MS Dhoni
+                    </li>
+                    <li class="teamcoach">
+                        <span>COACH</span>
+                        Stephen Fleming
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BATSMAN</span>
+                        Rturaj
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BOWLER</span>
+                        Deepak Cahar
+                    </li>
+                </ul>
+                <div class="stats">
+                    <ul class="stats-header">
+                        <li>PLAYED</li>
+                        <li>WON</li>
+                        <li>LOST</li>
+                        <li>TIED</li>
+                        <li>N/R</li>
+                        <li>IPL WON</li>
+
+                    </ul>
+                    <ul class="stats-data">
+                        <li>263</li>
+                        <li>263</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>2</li>
+                    </ul>
+                </div>
+                <a href="./cskpage.html" target="_blank" class="card-btn">
+                    Read more...
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="mi-bg-color" class="team-containor">
+            <div class="team-manager">
+                <img src="./teamlogo/milogo.png" alt="">
+            </div>
+            <div class="team-details">
+                <ul class="team-details-table">
+                    <li>Mumbai Indians </li>
+                    <li class="teamcoach">
+                        <span>CAPTION</span>
+                        Rohit Sharma
+                    </li>
+                    <li class="teamcoach">
+                        <span>COACH</span>
+                        Mahela Jayawardene
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BATSMAN</span>
+                        Ishaan Kishan
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BOWLER</span>
+                        Jaspreet Bumrah
+                    </li>
+                </ul>
+                <div class="stats">
+                    <ul class="stats-header">
+                        <li>PLAYED</li>
+                        <li>WON</li>
+                        <li>LOST</li>
+                        <li>TIED</li>
+                        <li>N/R</li>
+                        <li>IPL WON</li>
+
+                    </ul>
+                    <ul class="stats-data">
+                        <li>263</li>
+                        <li>263</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>2</li>
+                    </ul>
+                </div>
+                <a href="./mipage.html"  target="_blank" class="card-btn">
+                    Read more...
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+        <div id="rcb-bg-color" class="team-containor">
+            <div class="team-manager">
+                <img src="./teamlogo/rcblogo.png" alt="">
+            </div>
+            <div class="team-details">
+                <ul class="team-details-table">
+                    <li> Royal Challangers Bangalore </li>
+                    <li class="teamcoach">
+                        <span>CAPTION</span>
+                        Virat Kholi
+                    </li>
+                    <li class="teamcoach">
+                        <span>COACH</span>
+                        Sridharan Sriram
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BATSMAN</span>
+                        Ab devillers
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BOWLER</span>
+                        Yuzvendra Chahal
+                    </li>
+                </ul>
+                <div class="stats">
+                    <ul class="stats-header">
+                        <li>PLAYED</li>
+                        <li>WON</li>
+                        <li>LOST</li>
+                        <li>TIED</li>
+                        <li>N/R</li>
+                        <li>IPL WON</li>
+
+                    </ul>
+                    <ul class="stats-data">
+                        <li>263</li>
+                        <li>263</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>2</li>
+                    </ul>
+                </div>
+                <a href="./rcbpage.html" target="_blank" class="card-btn">
+                    Read more...
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div id="dc-bg-color" class="team-containor">
+            <div class="team-manager">
+                <img src="./teamlogo/dclogo.png" alt="">
+            </div>
+            <div class="team-details">
+                <ul class="team-details-table">
+                    <li> Delhi Capitals </li>
+                    <li class="teamcoach">
+                        <span>CAPTION</span>
+                        Rishabh Pant
+                    </li>
+                    <li class="teamcoach">
+                        <span>COACH</span>
+                        Ricky Ponting 
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BATSMAN</span>
+                        Shikhar Dhawan
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BOWLER</span>
+                        Amit Mishra
+                    </li>
+                </ul>
+                <div class="stats">
+                    <ul class="stats-header">
+                        <li>PLAYED</li>
+                        <li>WON</li>
+                        <li>LOST</li>
+                        <li>TIED</li>
+                        <li>N/R</li>
+                        <li>IPL WON</li>
+
+                    </ul>
+                    <ul class="stats-data">
+                        <li>263</li>
+                        <li>263</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>2</li>
+                    </ul>
+                </div>
+                <a href="./dcpage.html" target="_blank" class="card-btn">
+                    Read more...
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div id="rr-bg-color" class="team-containor">
+            <div class="team-manager">
+                <img src="./teamlogo/rrlogo.png" alt="">
+            </div>
+            <div class="team-details">
+                <ul class="team-details-table">
+                    <li> Rajasthan Royals </li>
+                    <li class="teamcoach">
+                        <span>CAPTION</span>
+                        Sanju Samson
+                    </li>
+                    <li class="teamcoach">
+                        <span>COACH</span>
+                        Trevor Penny
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BATSMAN</span>
+                        Sanju Samson
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BOWLER</span>
+                        Siddharth Trivedi
+                    </li>
+                </ul>
+                <div class="stats">
+                    <ul class="stats-header">
+                        <li>PLAYED</li>
+                        <li>WON</li>
+                        <li>LOST</li>
+                        <li>TIED</li>
+                        <li>N/R</li>
+                        <li>IPL WON</li>
+
+                    </ul>
+                    <ul class="stats-data">
+                        <li>263</li>
+                        <li>263</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>2</li>
+                    </ul>
+                </div>
+                <a href="./rrpage.html"  target="_blank"class="card-btn">
+                    Read more...
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div id="kkr-bg-color" class="team-containor">
+              <div  class="team-manager"> 
+                <img src="./teamlogo/kkrlogo.png" alt="">
+            </div>
+            <div class="team-details">
+                <ul class="team-details-table">
+                    <li> Kolkata Knight Riders </li>
+                    <li class="teamcoach">
+                        <span>CAPTION</span>
+                        Shreyas Iyer
+                      
+                    </li>
+                    <li class="teamcoach">
+                        <span>COACH</span>
+                        Brendon McCullum
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BATSMAN</span>
+                        Nitish Rana
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BOWLER</span>
+                        Andre Russell 
+                    </li>
+                </ul>
+                <div class="stats">
+                    <ul class="stats-header">
+                        <li>PLAYED</li>
+                        <li>WON</li>
+                        <li>LOST</li>
+                        <li>TIED</li>
+                        <li>N/R</li>
+                        <li>IPL WON</li>
+
+                    </ul>
+                    <ul class="stats-data">
+                        <li>263</li>
+                        <li>263</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>2</li>
+                    </ul>
+                </div>
+                <a href="./kkrpage.html" target="_blank" class="card-btn">
+                    Read more...
+                </a>
+            </div>
+        </div>
+
+
+
+        <div id="srh-bg-color" class="team-containor">
+            <div class="team-manager">
+                <img src="./teamlogo/srhlogo.png" alt="">
+            </div>
+            <div class="team-details">
+                <ul class="team-details-table">
+                    <li> SunRisers Hyderabad </li>
+                    <li class="teamcoach">
+                        <span>CAPTION</span>
+                        David Warner
+                    </li>
+                    <li class="teamcoach">
+                        <span>COACH</span>
+                        Trevor Bayliss
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BATSMAN</span>
+                        David Warner
+                    </li>
+                    <li class="teamcoach">
+                        <span>BEST BOWLER</span>
+                        Bhuvneshwar Kumar 
+                    </li>
+                </ul>
+                <div class="stats">
+                    <ul class="stats-header">
+                        <li>PLAYED</li>
+                        <li>WON</li>
+                        <li>LOST</li>
+                        <li>TIED</li>
+                        <li>N/R</li>
+                        <li>IPL WON</li>
+
+                    </ul>
+                    <ul class="stats-data">
+                        <li>263</li>
+                        <li>263</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>26</li>
+                        <li>2</li>
+                    </ul>
+                </div>
+                <a href="./srhpage.html" target="_blank" class="card-btn">
+                    Read more...
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ..........................Footer............................. -->
+    <footer>
+        <div class="main-footer">
+            <div class="team-detail">
+                <h4>Team</h4>
+                <li><a href="./cskpage.html" >Chenni super king</a></li>
+                <li><a href="./mipage.html">Mumbai Indian</a></li>
+                <li><a href="./rcbpage.html">Royal Challengers Bangalore</a></li>
+                <li><a href="./dcpage.html">Delhi Capitals</a></li>
+                <li><a href="./kkrpage.html">Kolkata Knight Riders</a></li>
+                <li><a href="./rrpage.html">Rajasthan Royals</a></li>
+                <li><a href="./srhpage.html">SunRisers Hyderabad</a></li>
+            </div>
+            <div class="nav-itm">
+                <li><a href="#">TOP</a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#csk-bg-color">TEAMS</a></li>
+            </div>
+        </div>
+        <div class="right">
+            <p><a href="https://www.linkedin.com/in/kundan-kumar-2b76081b3/">Contact Info. @KundanKumar</a></p>
+        </div>
+    </footer>
+
+    <!-- ..................................javascript.......................................... -->
+    <script>
+
+        var slide = document.getElementById("slider");
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+
+        btn1.onclick = function () {
+            slide.style.transform = "translateX(0px)";
+            btn1.classList.add('active');
+            btn2.classList.remove('active');
+            btn3.classList.remove('active');
+
+        };
+        btn2.onclick = function () {
+            slide.style.transform = "translateX(-100%)";
+            btn1.classList.remove('active');
+            btn2.classList.add('active');
+            btn3.classList.remove('active');
+
+        };
+        btn3.onclick = function () {
+            slide.style.transform = "translateX(-200%)";
+            btn1.classList.remove('active');
+            btn2.classList.remove('active');
+            btn3.classList.add('active');
+
+        };
+        btn4.onclick = function () {
+            slide.style.transform = "translateX(-300%)";
+            btn1.classList.remove('active');
+            btn2.classList.remove('active');
+            btn3.classList.remove('active');
+
+        };
+
+
+    </script>
+
+
+</body>
+
+</html>
